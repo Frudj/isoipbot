@@ -1,7 +1,6 @@
 import telebot
 from telebot import types
 import sqlite3
-from keyboa import keyboa_maker
 
 token = ''
 bot = telebot.TeleBot(token)
@@ -85,6 +84,8 @@ def third(message):
     elif message.text == "Загрузка документов":
         keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
         keyboard.row("Задолжности")
+        keyboard.row("Правила оформления письменных работ")
+        keyboard.row("Правила применения шаблонов оформления")
         send = bot.send_message(message.from_user.id, "Выберите нужный документ для загрузки:", reply_markup=keyboard)
         bot.register_next_step_handler(send, five)
     elif message.text == "Моя группа остуствует":
@@ -132,6 +133,20 @@ def five(message):
         keyboard.row("На главную")
         send = bot.send_message(message.from_user.id, "Приказ на отчисление", reply_markup=keyboard)
         file = open('19_04_2021.doc', 'rb')
+        bot.send_document(message.chat.id, file)
+        bot.register_next_step_handler(send, first)
+    elif message.text == "Правила оформления письменных работ":
+        keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
+        keyboard.row("На главную")
+        send = bot.send_message(message.from_user.id, "№ 242 Правила оформления письменных работ обучающихся для технических направлений подготовки", reply_markup=keyboard)
+        file = open('242pr.pdf', 'rb')
+        bot.send_document(message.chat.id, file)
+        bot.register_next_step_handler(send, first)
+    elif message.text == "Правила применения шаблонов оформления":
+        keyboard = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=False)
+        keyboard.row("На главную")
+        send = bot.send_message(message.from_user.id, "№ 242 Правила применения шаблонов оформления письменных работ обучающихся", reply_markup=keyboard)
+        file = open('242sh.pdf', 'rb')
         bot.send_document(message.chat.id, file)
         bot.register_next_step_handler(send, first)
 
