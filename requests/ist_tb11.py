@@ -832,7 +832,7 @@ except:
 
 ##Суббота
 try:
-    saturday = driver.find_element_by_xpath('').text
+    saturday = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/header/div/div[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday,))
     base.commit()
 except:
@@ -840,28 +840,28 @@ except:
 
 ##1 пара (начало)
 try:
-    saturday_time_1 = driver.find_element_by_xpath('').text
+    saturday_time_1 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[1]/div/div[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_time_1,))
     base.commit()
 except:
     print ("Значений не найдено, пропускаю")
 
 try:
-    saturday_name_1 = driver.find_element_by_xpath('').text
+    saturday_name_1 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[1]/div/div[2]/div/div/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_name_1,))
     base.commit()
 except:
     print ("Значений не найдено, пропускаю")
 
 try:
-    saturday_teacher_1 = driver.find_element_by_xpath('').text
+    saturday_teacher_1 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[1]/div/div[2]/div/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_teacher_1,))
     base.commit()
 except:
     print ("Значений не найдено, пропускаю")
 
 try:
-    saturday_aud_1 = driver.find_element_by_xpath('').text
+    saturday_aud_1 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[1]/div/div[2]/div/span[2]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_aud_1,))
     base.commit()
 except:
@@ -870,28 +870,28 @@ except:
 
 ##2 пара (начало)
 try:
-    saturday_time_2 = driver.find_element_by_xpath('').text
+    saturday_time_2 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[2]/div/div[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_time_2,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_name_2 = driver.find_element_by_xpath('').text
+    saturday_name_2 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[2]/div/div[2]/div/div[2]/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_name_2,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_teacher_2 = driver.find_element_by_xpath('').text
+    saturday_teacher_2 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[2]/div/div[2]/div/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_teacher_2,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_aud_2 = driver.find_element_by_xpath('').text
+    saturday_aud_2 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[2]/div/div[2]/div/span[2]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_aud_2,))
     base.commit()
 except:
@@ -900,28 +900,28 @@ except:
 
 ##3 пара (начало)
 try:
-    saturday_time_3 = driver.find_element_by_xpath('').text
+    saturday_time_3 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[3]/div/div[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_time_3,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_name_3 = driver.find_element_by_xpath('').text
+    saturday_name_3 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[3]/div/div[2]/div/div[2]/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_name_3,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_teacher_3 = driver.find_element_by_xpath('').text
+    saturday_teacher_3 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[3]/div/div[2]/div/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_teacher_3,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_aud_3 = driver.find_element_by_xpath('').text
+    saturday_aud_3 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[3]/div/div[2]/div/span[2]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_aud_3,))
     base.commit()
 except:
@@ -931,28 +931,28 @@ except:
 
 ##4 пара (начало)
 try:
-    saturday_time_4 = driver.find_element_by_xpath('').text
+    saturday_time_4 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[4]/div/div[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_time_4,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_name_4 = driver.find_element_by_xpath('').text
+    saturday_name_4 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[4]/div/div[2]/div/div[2]/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_name_4,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_teacher_4 = driver.find_element_by_xpath('').text
+    saturday_teacher_4 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[4]/div/div[2]/div/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_teacher_4,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_aud_4 = driver.find_element_by_xpath('').text
+    saturday_aud_4 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[4]/div/div[2]/div/span[2]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_aud_4,))
     base.commit()
 except:
@@ -961,28 +961,28 @@ except:
 
 ##5 пара (начало)
 try:
-    saturday_time_5 = driver.find_element_by_xpath('').text
+    saturday_time_5 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[5]/div/div[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_time_5,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_name_5 = driver.find_element_by_xpath('').text
+    saturday_name_5 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[5]/div/div[2]/div/div[2]/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_name_5,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_teacher_5 = driver.find_element_by_xpath('').text
+    saturday_teacher_5 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[5]/div/div[2]/div/span[1]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_teacher_5,))
     base.commit()
 except:
     print("Значений не найдено, пропускаю")
 
 try:
-    saturday_aud_5 = driver.find_element_by_xpath('').text
+    saturday_aud_5 = driver.find_element_by_xpath('//*[@id="page-main"]/div/div/div[6]/div/div/div[2]/div/div/div[5]/div/div[2]/div/span[2]').text
     cur.execute('INSERT INTO ist_tb11 VALUES(?);', (saturday_aud_5,))
     base.commit()
 except:
