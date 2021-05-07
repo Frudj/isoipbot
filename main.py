@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 import sqlite3
+from datetime import datetime
 from config import token
 
 #ФТТ
@@ -46,7 +47,7 @@ def any_msg(message):
         keyrasp.add(ftt_button, fasip_button, ustip_button)
         bot.send_message(message.chat.id, "Выберите свой факультет:", reply_markup=keyrasp)
     elif message.text.lower() == 'справочник':
-        keyinfo = types.InlineKeyboardMarkup(row_width=3)
+        keyinfo = types.InlineKeyboardMarkup(row_width=1)
         teacher_button = types.InlineKeyboardButton(text="Поиск преподователя", callback_data="teacher")
         docs_button = types.InlineKeyboardButton(text="Загрузка документов", callback_data="docs")
         keyinfo.add(teacher_button, docs_button)
@@ -139,14 +140,12 @@ def callback_inline(call):
         bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id, text="Выберите свой факультет:",reply_markup=keyrasp)
 
     elif call.data == "maininfo":
-        keyinfo = types.InlineKeyboardMarkup(row_width=3)
+        keyinfo = types.InlineKeyboardMarkup(row_width=1)
         teacher_button = types.InlineKeyboardButton(text="Поиск преподователя", callback_data="teacher")
         docs_button = types.InlineKeyboardButton(text="Загрузка документов", callback_data="docs")
         keyinfo.add(teacher_button, docs_button)
         bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id, text="Выберите необходимый пункт:",reply_markup=keyinfo)
-    elif call.data == 'teacher':
-        bot.send_message(call.message.chat.id, 'Пожалуйста, напишите фамилию преподователя')
-        bot.send_message(call.message.chat.id, 'Например: Попов')
+
     elif call.data == 'docs':
         keyboard_docs = types.InlineKeyboardMarkup(row_width=1)
         docs_but1 = types.InlineKeyboardButton(text="Заявка на выдачу справки-вызова ФТТ", callback_data="docs1")
@@ -320,6 +319,10 @@ def callback_inline(call):
 # Конец блока с ФЭСиП
 
 #Ответы на запросы
+    elif call.data == 'teacher':
+        bot.send_message(call.message.chat.id, 'Пожалуйста, напишите фамилию преподователя')
+        bot.send_message(call.message.chat.id, 'Например: Попов')
+
     elif call.data == 'fasip_curs5':
         bot.send_message(call.message.chat.id, 'Извините, групп не найдено')
     elif call.data == 'ftt_curs5':
@@ -516,6 +519,10 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, 'Список задолжностей')
         file6 = open('docs/dolg.doc', 'rb')
         bot.send_document(call.message.chat.id, file6)
+    return call
 
-#if __name__ == "__main__":
-bot.polling(none_stop=True)
+current_datetime = datetime.now()
+print("Бот запущен:")
+print(current_datetime)
+
+bot.polling(none_stop=True, interval=0)
