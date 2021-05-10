@@ -29,7 +29,7 @@ def start_message(message):
     keyboard.row('Получить расписание')
     keyboard.row('Поиск аудитории')
     keyboard.row('Справочник', 'Помощь')
-    bot.send_message(message.chat.id, 'Добро пожаловать в стартовое меню!', reply_markup=keyboard)
+    bot.send_message(message.chat.id, 'Скорее выбирай раздел в Главном меню – я знаю много интересного про институт!', reply_markup=keyboard)
     if not str(message.chat.id) in joinedUser:
         file = open('users.txt', 'a')
         file.write(str(message.chat.id) + '\n')
@@ -317,88 +317,112 @@ def callback_inline(call):
         key_ustip_curs4.add(ustip_curs4_up, ustip_curs4_au, backbutton_ustip_curs4)
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="Выберите свою группу:", reply_markup=key_ustip_curs4)
 # Конец блока с ФЭСиП
-
-#Ответы на запросы
     elif call.data == 'teacher':
-        bot.send_message(call.message.chat.id, 'Пожалуйста, напишите фамилию преподователя')
+        bot.send_message(call.message.chat.id, 'Пожалуйста, напишите фамилию преподавателя')
         bot.send_message(call.message.chat.id, 'Например: Попов')
 
     elif call.data == 'fasip_curs5':
         bot.send_message(call.message.chat.id, 'Извините, групп не найдено')
+
     elif call.data == 'ftt_curs5':
         bot.send_message(call.message.chat.id, 'Извините, групп не найдено')
+
     elif call.data == 'ustip_curs5':
         bot.send_message(call.message.chat.id, 'Извините, групп не найдено')
+
     #Факультет ФТТ
     elif call.data == 'apa_tb11':
         bot.send_message(call.message.chat.id, 'Расписание ЭПА-Тb11')
         bot.send_message(call.message.chat.id, apa_tb11_str)
+
     elif call.data == 'apa_tb21':
         bot.send_message(call.message.chat.id, 'Расписание ЭПА-Тb21')
         bot.send_message(call.message.chat.id, apa_tb21_str)
+
     elif call.data == 'apa_tb31':
         bot.send_message(call.message.chat.id, 'Расписание ЭПА-Тb31')
         bot.send_message(call.message.chat.id, apa_tb31_str)
+
     elif call.data == 'apa_tb41':
         bot.send_message(call.message.chat.id, 'Расписание ЭПА-Тb41')
         bot.send_message(call.message.chat.id, apa_tb41_str)
+
     elif call.data == 'apm_tb11':
         bot.send_message(call.message.chat.id, 'Расписание АПМ-Тb11')
         bot.send_message(call.message.chat.id, apm_tb11_str)
+
     elif call.data == 'apm_tb21':
         bot.send_message(call.message.chat.id, 'Расписание АПМ-Тb21')
         bot.send_message(call.message.chat.id, apm_tb21_str)
+
     elif call.data == 'apm_tb31':
         bot.send_message(call.message.chat.id, 'Расписание АПМ-Тb31')
         bot.send_message(call.message.chat.id, apm_tb31_str)
+
     elif call.data == 'apm_tb41':
         bot.send_message(call.message.chat.id, 'Расписание АПМ-Тb41')
         bot.send_message(call.message.chat.id, apm_tb41_str)
+
     elif call.data == 'bjt_tb11':
         bot.send_message(call.message.chat.id, 'Расписание БЖТ-Тb11')
         bot.send_message(call.message.chat.id, bjt_tb11_str)
+
     elif call.data == 'bjt_tb21':
         bot.send_message(call.message.chat.id, 'Расписание БЖТ-Тb21')
         bot.send_message(call.message.chat.id, bjt_tb21_str)
+
     elif call.data == 'bjt_tb31':
         bot.send_message(call.message.chat.id, 'Расписание БЖТ-Тb31')
         bot.send_message(call.message.chat.id, bjt_tb31_str)
+
     elif call.data == 'bjt_tb41':
         bot.send_message(call.message.chat.id, 'Расписание БЖТ-Тb41')
         bot.send_message(call.message.chat.id, bjt_tb41_str)
+
     elif call.data == 'ikts_tb11':
         bot.send_message(call.message.chat.id, 'Расписание ИКТС-Тb11')
         bot.send_message(call.message.chat.id, ikts_tb11_str)
+
     elif call.data == 'ikts_tb21':
         bot.send_message(call.message.chat.id, 'Расписание ИКТС-Тb21')
         bot.send_message(call.message.chat.id, ikts_tb21_str)
+
     elif call.data == 'ikts_tb31':
         bot.send_message(call.message.chat.id, 'Расписание ИКТС-Тb31')
         bot.send_message(call.message.chat.id, ikts_tb31_str)
+
     elif call.data == 'ikts_tb41':
         bot.send_message(call.message.chat.id, 'Расписание ИКТС-Тb41')
         bot.send_message(call.message.chat.id, ikts_tb41_str)
+
     elif call.data == 'ist_tb11':
         bot.send_message(call.message.chat.id, 'Расписание ИСТ-Тb11')
         bot.send_message(call.message.chat.id, ist_tb11_str)
+
     elif call.data == 'ist_tb21':
         bot.send_message(call.message.chat.id, 'Расписание ИСТ-Тb21')
         bot.send_message(call.message.chat.id, ist_tb21_str)
+
     elif call.data == 'ist_tb31':
         bot.send_message(call.message.chat.id, 'Расписание ИСТ-Тb31')
         bot.send_message(call.message.chat.id, ist_tb31_str)
+
     elif call.data == 'ist_tb41':
         bot.send_message(call.message.chat.id, 'Расписание ИСТ-Тb41')
         bot.send_message(call.message.chat.id, ist_tb41_str)
+
     elif call.data == 'obd_tb11':
         bot.send_message(call.message.chat.id, 'Расписание ОБД-Тb11')
         bot.send_message(call.message.chat.id, obd_tb11_str)
+
     elif call.data == 'obd_tb21':
         bot.send_message(call.message.chat.id, 'Расписание ОБД-Тb21')
         bot.send_message(call.message.chat.id, obd_tb21_str)
+
     elif call.data == 'obd_tb31':
         bot.send_message(call.message.chat.id, 'Расписание ОБД-Тb31')
         bot.send_message(call.message.chat.id, obd_tb31_str)
+
     elif call.data == 'obd_tb41':
         bot.send_message(call.message.chat.id, 'Расписание ОБД-Тb41')
         bot.send_message(call.message.chat.id, obd_tb41_str)
@@ -406,42 +430,55 @@ def callback_inline(call):
     elif call.data == 'bu_ab11':
         bot.send_message(call.message.chat.id, 'Расписание БУ-Эb11')
         bot.send_message(call.message.chat.id, bu_ab11_str)
+
     elif call.data == 'bu_ab21':
         bot.send_message(call.message.chat.id, 'Расписание БУ-Эb21')
         bot.send_message(call.message.chat.id, bu_ab21_str)
+
     elif call.data == 'bu_ab31':
         bot.send_message(call.message.chat.id, 'Расписание БУ-Эb31')
         bot.send_message(call.message.chat.id, bu_ab31_str)
+
     elif call.data == 'turu_ab11':
         bot.send_message(call.message.chat.id, 'Расписание ТУРУ-Эb11')
         bot.send_message(call.message.chat.id, turu_ab11_str)
+
     elif call.data == 'turu_ab21':
         bot.send_message(call.message.chat.id, 'Расписание ТУРУ-Эb21')
         bot.send_message(call.message.chat.id, turu_ab21_str)
+
     elif call.data == 'turu_ab31':
         bot.send_message(call.message.chat.id, 'Расписание ТУРУ-Эb31')
         bot.send_message(call.message.chat.id, turu_ab31_str)
+
     elif call.data == 'up_ab11':
         bot.send_message(call.message.chat.id, 'Расписание УП-Эb11')
         bot.send_message(call.message.chat.id, up_ab11_str)
+
     elif call.data == 'up_ab21':
         bot.send_message(call.message.chat.id, 'Расписание УП-Эb21')
         bot.send_message(call.message.chat.id, up_ab21_str)
+
     elif call.data == 'up_ab31':
         bot.send_message(call.message.chat.id, 'Расписание УП-Эb31')
         bot.send_message(call.message.chat.id, up_ab31_str)
+
     elif call.data == 'up_ab41':
         bot.send_message(call.message.chat.id, 'Расписание УП-Эb41')
         bot.send_message(call.message.chat.id, up_ab41_str)
+
     elif call.data == 'au_ab11':
         bot.send_message(call.message.chat.id, 'Расписание ЭУ-Эb11')
         bot.send_message(call.message.chat.id, au_ab11_str)
+
     elif call.data == 'au_ab21':
         bot.send_message(call.message.chat.id, 'Расписание ЭУ-Эb21')
         bot.send_message(call.message.chat.id, au_ab21_str)
+
     elif call.data == 'au_ab31':
         bot.send_message(call.message.chat.id, 'Расписание ЭУ-Эb31')
         bot.send_message(call.message.chat.id, au_ab31_str)
+
     elif call.data == 'au_ab41':
         bot.send_message(call.message.chat.id, 'Расписание ЭУ-Эb41')
         bot.send_message(call.message.chat.id, au_ab41_str)
@@ -449,48 +486,63 @@ def callback_inline(call):
     elif call.data == 'grp_gb11':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гb11')
         bot.send_message(call.message.chat.id, grp_gb11_str)
+
     elif call.data == 'grp_gb21':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гb21')
         bot.send_message(call.message.chat.id, grp_gb21_str)
+
     elif call.data == 'grp_gb31':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гb31')
         bot.send_message(call.message.chat.id, grp_gb31_str)
+
     elif call.data == 'grp_gb41':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гb41')
         bot.send_message(call.message.chat.id, grp_gb41_str)
+
     elif call.data == 'grp_gbv11':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbv11')
         bot.send_message(call.message.chat.id, grp_gbv11_str)
+
     elif call.data == 'grp_gbv21':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbv21')
         bot.send_message(call.message.chat.id, grp_gbv21_str)
+
     elif call.data == 'grp_gbv31':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbv31')
         bot.send_message(call.message.chat.id, grp_gbv31_str)
+
     elif call.data == 'grp_gbv41':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbv41')
         bot.send_message(call.message.chat.id, grp_gbv41_str)
+
     elif call.data == 'grp_gbvs11':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbvs11')
         bot.send_message(call.message.chat.id, grp_gbvs11_str)
+
     elif call.data == 'grp_gbvs21':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbvs21')
         bot.send_message(call.message.chat.id, grp_gbvs21_str)
+
     elif call.data == 'grp_gbvs31':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbvs31')
         bot.send_message(call.message.chat.id, grp_gbvs31_str)
+
     elif call.data == 'grp_gbvs41':
         bot.send_message(call.message.chat.id, 'Расписание ГРП-Гbvs41')
         bot.send_message(call.message.chat.id, grp_gbvs41_str)
+
     elif call.data == 'ugp_gb11':
         bot.send_message(call.message.chat.id, 'Расписание УГП-Гb11')
         bot.send_message(call.message.chat.id, ugp_gb11_str)
+
     elif call.data == 'ugp_gb21':
         bot.send_message(call.message.chat.id, 'Расписание УГП-Гb21')
         bot.send_message(call.message.chat.id, ugp_gb21_str)
+
     elif call.data == 'ugp_gb31':
         bot.send_message(call.message.chat.id, 'Расписание УГП-Гb31')
         bot.send_message(call.message.chat.id, ugp_gb31_str)
+
     elif call.data == 'ugp_gb41':
         bot.send_message(call.message.chat.id, 'Расписание УГП-Гb41')
         bot.send_message(call.message.chat.id, ugp_gb41_str)
@@ -499,26 +551,32 @@ def callback_inline(call):
         bot.send_message(call.message.chat.id, 'Заявка на выдачу справки-вызова ФТТ')
         file1 = open('docs/ftt.docx', 'rb')
         bot.send_document(call.message.chat.id, file1)
+
     elif call.data == 'docs2':
         bot.send_message(call.message.chat.id, 'Заявка на выдачу справки-вызова ФЭСиП')
         file2 = open('docs/fasip.doc', 'rb')
         bot.send_document(call.message.chat.id, file2)
+
     elif call.data == 'docs3':
         bot.send_message(call.message.chat.id, 'Заявка на выдачу справки-вызова ФЮСТиП')
         file3 = open('docs/ustip.doc', 'rb')
         bot.send_document(call.message.chat.id, file3)
+
     elif call.data == 'docs4':
         bot.send_message(call.message.chat.id, 'Правила оформления письменных работ')
         file4 = open('docs/242pr.pdf', 'rb')
         bot.send_document(call.message.chat.id, file4)
+
     elif call.data == 'docs5':
         bot.send_message(call.message.chat.id, 'Правила применения шаблонов оформления')
         file5 = open('docs/242sh.pdf', 'rb')
         bot.send_document(call.message.chat.id, file5)
+
     elif call.data == 'docs6':
         bot.send_message(call.message.chat.id, 'Список задолжностей')
         file6 = open('docs/dolg.doc', 'rb')
         bot.send_document(call.message.chat.id, file6)
+
     return call
 
 current_datetime = datetime.now()
